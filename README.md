@@ -1,2 +1,2 @@
 # utils
-Personal helpers functions
+Lightweight personal utilities for javascript manipulation.

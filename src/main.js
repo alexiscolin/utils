@@ -9,8 +9,8 @@ var utils = {
 
   /**
   /*  CREATE-ELEMENT - create DOM element and return it  */
-  /*  @param {object} options - list of element's configuration */
-  /*  @param {object} insert - insert element in DOM from function */
+  /*  @param {object} [options] - list of element's configuration */
+  /*  @param {object} [insert] - insert element in DOM from function */
   /* */
   createElement: function(options = {}, insert = {}){
 
@@ -66,6 +66,60 @@ var utils = {
     }
 
     return el;
+  },
+
+
+  /**********************
+  ****** MATH FUNC ******
+  **********************/
+  math: {
+    /**
+    /*  AFFINE - function affine - (AX + b)  */
+    /* */
+    affine: {
+      a: function(x, y){
+        return (y[1] - x[1]) / (y[0] - x[0]);
+      },
+
+      b: function(a, x){
+        return x[1] - (a * x[0]);
+      },
+
+      func: function(x, y){
+
+        const closeX = x;
+        const closeY = y;
+
+        if(closeX[0] === closeY[0]){
+          throw "Affine function - closeX[0] and closeY[0] variables are equals! " + closeX[0] + " === " + closeY[0];
+        }
+
+        const a = function(){
+          return utils.affine.a(closeX, closeY);
+        }();
+
+        const b = function(){
+          return utils.affine.b(a, closeX);
+        }();
+
+        let getPoint = function(point){
+          return (a * point) + b;
+        }
+
+        return {
+          a, b, getPoint
+        }
+      }
+    },
+  },
+
+  /**
+  /*  RANDOM - get a random number on a min-max range  */
+  /*  @param {number} [min] - min number (default: 0)*/
+  /*  @param {number} [max] - max number (default: 1) */
+  /* */
+  random: function(min = 0, max = 1){
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 };
 

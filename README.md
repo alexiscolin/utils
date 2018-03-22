@@ -1,10 +1,24 @@
 <h1>🛠️ UTILS</h1>
-Lightweight personal utilities for javascript manipulation.<br>
+Lightweight personal utilities for javascript manipulation.<br><br>
 <ol>
     <li><a href="#createElement">createElement</a></li>
     <li><a href="#mathAffine">math.affine</a></li>
     <li><a href="#mathRandom">math.random</a></li>
 </ol>
+
+- [x] createElement
+- [x] affine
+- [x] random
+- [ ] classAction
+- [ ] prefixBrowser
+- [ ] eventBinder
+- [ ] rAF
+- [ ] ancestorFinder
+- [ ] wordWrapper
+- [ ] createPromise
+- [ ] debounce
+- [ ] throttle
+
 <h2 id="createElement">createElement</h2>
 This function create DOM elements with styles, attributes, content and let you insert it in the DOM through multiple options.
 

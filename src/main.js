@@ -95,11 +95,11 @@ var utils = {
         }
 
         const a = function(){
-          return utils.affine.a(closeX, closeY);
+          return utils.math.affine.a(closeX, closeY);
         }();
 
         const b = function(){
-          return utils.affine.b(a, closeX);
+          return utils.math.affine.b(a, closeX);
         }();
 
         let getPoint = function(point){

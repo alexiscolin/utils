@@ -1,13 +1,17 @@
-# utils
-Lightweight personal utilities for javascript manipulation.
-
-## createElement
+<h1>🛠️ UTILS</h1>
+Lightweight personal utilities for javascript manipulation.<br>
+<ol>
+    <li><a href="#createElement">createElement</a></li>
+    <li><a href="#mathAffine">math.affine</a></li>
+    <li><a href="#mathRandom">math.random</a></li>
+</ol>
+<h2 id="createElement">createElement</h2>
 This function create DOM elements with styles, attributes, content and let you insert it in the DOM through multiple options.
 
-### syntax
+### SYNTAX
 **``` utils.createElement([option, insert]); ```**
 
-### use
+### USE
 
 ```javascript
 
@@ -27,7 +31,7 @@ let el = utils.createElement({
 
 ```
 
-### Options and Settings
+### OPTIONS AND SETTING
 This function has two optionals parameters you can use with object type argument. 
 The first one is set in order to define element configuration wherheas the second one is used in order to configure the insertion in the DOM. Several **optional** properties can be set inside of them:
 
@@ -146,3 +150,57 @@ The first one is set in order to define element configuration wherheas the secon
   </tr>
 </table></div>
 
+---
+
+<h2 id="mathAffine">Math - Affine</h2>
+
+This function let you generate an affine function `(AX + B)` with two couples of coordinates. This is usefull if you want to find a point related to another following a rule given by other coordinates.
+
+This function let you get the multiplying factor variable `A`.
+This function let you get the origin coordinate variable `B`.
+
+By using a closure, you can directly create an affine function that let you get a point on the line drawn by the function (ax+b). To do, you only need to initiate the closure passing two coordinate systems (`X` and `Y`), then, by passing an `X` variable at any moment, you will get the point.
+
+### SYNTAX
+**``` utils.math.affine.a(array(number, number), array(number, number)); ```**<br>
+**``` utils.math.affine.b(number, array(number, number)); ```**<br>
+**``` utils.math.affine.func(array(number, number), array(number, number)); ```**
+
+### USE
+```javascript
+const vars = {
+    x: [0, -500],
+    y: [100, 500]
+};
+
+//get affine variables
+const affineVarA = utils.math.affine.func(vars.x, vars.y);
+const affineVarB = utils.math.affine.func(vars.x, affineVarA);
+
+//get closure function
+const affineFunc = utils.math.affine.func(vars.x, vars.y);
+affineFunc.getPoint(50);
+```
+
+### OPTIONS AND SETTING
+The most simple way to get the affine function is to use `utils.math.affine.func(x,y)` giving two arguments (`X` and `Y` coordinates systems) to the function. This will return a closure function. Using this closure function, you can call the `getPoint()` method. `getPoint` has an unique parameter: the X variable in the affine function `(A*X+B)`.
+
+```javascript
+const affineFunc = utils.math.affine.func([1000, -100], [2000, 100]);
+console.log(affineFunc.getPoint(1500)) // display -> 0
+```
+> Thanks to @NathalieVidon who gave a lot of help on this function.
+
+---
+
+<h2 id="mathRandom">Math - Random</h2>
+
+This function give you the power to get a random number between two other number. You need to pass two argument to the function: a min and a max. These arguments are optional, by default `min` argument is set to `0` and `max` is argument is set to `1`.
+
+### SYNTAX
+**``` utils.math.random([number, number]); ```**
+
+### USE
+```javascript
+let random = utils.math.random(0, 10);
+```

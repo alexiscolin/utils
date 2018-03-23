@@ -182,6 +182,8 @@ By using a closure, you can directly create an affine function that let you get 
 
 ### USE
 ```javascript
+import { utils } from 'utils';
+
 const vars = {
     x: [0, -500],
     y: [100, 500]
@@ -216,5 +218,6 @@ This function give you the power to get a random number between two other number
 
 ### USE
 ```javascript
+import { utils } from 'utils';
 let random = utils.math.random(0, 10);
 ```

@@ -76,7 +76,7 @@ var utils = {
     /**
     /*  AFFINE - function affine - (AX + b)  */
     /* */
-    affine: {
+    createAffine: {
       a: function(x, y){
         return (y[1] - x[1]) / (y[0] - x[0]);
       },

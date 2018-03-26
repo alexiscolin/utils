@@ -7,7 +7,7 @@ Lightweight personal utilities for javascript manipulation.<br><br>
 </ol>
 
 - [x] createElement
-- [x] affine
+- [x] createAffine
 - [x] random
 - [ ] classAction
 - [ ] prefixBrowser

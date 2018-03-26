@@ -2,7 +2,7 @@
 Lightweight personal utilities for javascript manipulation.<br><br>
 <ol>
     <li><a href="#createElement">createElement</a></li>
-    <li><a href="#mathAffine">math.affine</a></li>
+    <li><a href="#mathAffine">math.createAffine</a></li>
     <li><a href="#mathRandom">math.random</a></li>
 </ol>
 

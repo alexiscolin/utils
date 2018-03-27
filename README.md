@@ -2,14 +2,11 @@
 Lightweight personal utilities for javascript manipulation.<br><br>
 <ol>
     <li><a href="#createElement">createElement</a></li>
+    <li><a href="#watch">watch</a></li>
     <li><a href="#mathAffine">math.createAffine</a></li>
     <li><a href="#mathRandom">math.random</a></li>
 </ol>
 
-- [x] createElement
-- [x] watch
-- [x] createAffine
-- [x] random
 - [ ] classAction
 - [ ] prefixBrowser
 - [ ] eventBinder
@@ -164,6 +161,42 @@ The first one is set in order to define element configuration wherheas the secon
     <td valign="middle"><pre><code>'method' : 'after'</code></pre></td>
   </tr>
 </table></div>
+
+---
+
+<h2 id="watch">Watch</h2>
+
+Watch function let you create a proxy object in order to listen for properties changes. Then, you can create an object with many properties, update them and trigger some functions if these properties are listened. This is useful to avoid regenerate the DOM for listening and let modules interact under the hood.
+
+### SYNTAX
+**``` let proxy = utils.watch({}); ```**
+
+### USE
+
+```javascript
+
+import { utils } from 'utils';
+
+const obj = {
+    value1: 0,
+    value2: false
+}
+
+// create proxy
+let proxy = utils.watch(obj);
+
+// add a listener on the proxy
+let listener = proxy.addListener('value1', function(){
+    console.log('change');
+});
+
+proxy.value1 = 10; // console -> 'change'
+
+// remove a listener
+proxy.removeListener(listener);
+proxy.value1 = 5; // console -> ø
+
+```
 
 ---
 

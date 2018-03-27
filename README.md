@@ -7,6 +7,7 @@ Lightweight personal utilities for javascript manipulation.<br><br>
 </ol>
 
 - [x] createElement
+- [x] watch
 - [x] createAffine
 - [x] random
 - [ ] classAction

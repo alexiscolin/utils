@@ -179,6 +179,10 @@ var utils = {
   /* */
   random: function(min = 0, max = 1){
     return Math.floor(Math.random() * (max - min + 1) + min);
+  },
+  
+  shuffle: function(arry){
+    return arry.map((a) => [Math.random(),a]).sort((a,b) => a[0]-b[0]).map((a) => a[1]);
   }
 };
 

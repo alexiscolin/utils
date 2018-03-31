@@ -5,6 +5,7 @@ Lightweight personal utilities for javascript manipulation.<br><br>
     <li><a href="#watch">watch</a></li>
     <li><a href="#mathAffine">math.createAffine</a></li>
     <li><a href="#mathRandom">math.random</a></li>
+    <li><a href="#">math.shuffle</a></li>
 </ol>
 
 - [ ] classAction

@@ -78,6 +78,18 @@ var utils = {
   **********************/
   
   /**
+  /*  FINDANCESTOR - look for a parent element that matches for a specific class */
+  /*  @param {HTMLnode} el - root element */
+  /*  @param {string} cls - class to find on parent */
+  /*  @return {HTMLnode} el - ancestor  */
+  /* */
+  findAncestor: function(el, cls) {
+    while ((el = el.parentElement) && !el.classList.contains(cls));
+    return el;
+  },
+  
+  
+  /**
   /*  WATCH - create a proxy watcher in order to listen for properties changes */
   /*  @param {object} obj - object with properties you wan to listen */
   /*  @return {object} proxy - proxy object you can change to be listened */

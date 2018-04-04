@@ -2,8 +2,8 @@
 Lightweight personal utilities for javascript manipulation.<br><br>
 <ol>
     <li><a href="#createElement">createElement</a></li>
-    <li><a href="#">getComputedTranslateXY</a></li>
-    <li><a href="#">ancestorFinder</a></li>
+    <li><a href="#getComputedTranslateXY">getComputedTranslateXY</a></li>
+    <li><a href="#ancestorFinder">ancestorFinder</a></li>
     <li><a href="#watch">watch</a></li>
     <li><a href="#mathAffine">math.createAffine</a></li>
     <li><a href="#mathRandom">math.random</a></li>
@@ -163,6 +163,18 @@ The first one is set in order to define element configuration wherheas the secon
     <td valign="middle"><pre><code>'method' : 'after'</code></pre></td>
   </tr>
 </table></div>
+
+---
+
+<h2 id="getComputedTranslateXY">getComputedTranslateXY</h2>
+
+Get CSS translate state of DOM element.
+
+---
+
+<h2 id="ancestorFinder">ancestorFinder</h2>
+
+Look for a parent element that matches for a specific class.
 
 ---
 

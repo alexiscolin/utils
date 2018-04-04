@@ -2,6 +2,7 @@
 Lightweight personal utilities for javascript manipulation.<br><br>
 <ol>
     <li><a href="#createElement">createElement</a></li>
+    <li><a href="#">getComputedTranslateXY</a></li>
     <li><a href="#">ancestorFinder</a></li>
     <li><a href="#watch">watch</a></li>
     <li><a href="#mathAffine">math.createAffine</a></li>

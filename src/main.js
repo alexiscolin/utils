@@ -73,6 +73,28 @@ var utils = {
   },
   
   
+  /**
+  /*  GET COMPUTED TRANSLATE XY - get CSS translate state of DOM element */
+  /* @param {HTMLnode} el - element to inspect */
+  /* @returns {array} xy - computed style in array : [X, Y] */
+  /* */
+  getComputedTranslateXY: function(el){
+    if(!window.getComputedStyle) return;
+
+    const xy = [];
+    const style = getComputedStyle(el);
+    const transform = style.transform || style.webkitTransform || style.mozTransform;
+
+    let mat = transform.match(/^matrix3d\((.+)\)$/);
+    if(mat) return parseFloat(mat[1].split(', ')[13]);
+
+    mat = transform.match(/^matrix\((.+)\)$/);
+    mat ? xy.push(parseFloat(mat[1].split(', ')[4])) : 0;
+    mat ? xy.push(parseFloat(mat[1].split(', ')[5])) : 0;
+    return xy;
+  },
+  
+  
   /**********************
   *** FUNCTIONS FUNC ****
   **********************/

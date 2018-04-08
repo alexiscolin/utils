@@ -7,7 +7,7 @@ Lightweight personal utilities for javascript manipulation.<br><br>
     <li><a href="#watch">watch</a></li>
     <li><a href="#mathAffine">math.createAffine</a></li>
     <li><a href="#mathRandom">math.random</a></li>
-    <li><a href="#">math.shuffle</a></li>
+    <li><a href="#mathShuffle">math.shuffle</a></li>
 </ol>
 
 - [ ] classAction
@@ -285,3 +285,8 @@ This function give you the power to get a random number between two other number
 import { utils } from 'utils';
 let random = utils.math.random(0, 10);
 ```
+---
+
+<h2 id="mathShuffle">Math - Shuffle</h2>
+
+Shuffle array

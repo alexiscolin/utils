@@ -160,6 +160,22 @@ var utils = {
 
     return proxy
   },
+  
+  /**
+  /*  TOTAL LENGTH - get full length of SVG path */
+  /*  @param {HTMLnode} el - element to inspect */
+  /*  @return {Number} totalLength - element path length */
+  /* */
+  totalLength(el){
+    let totalLength = 0;
+    let prevPos;
+    for (var i = 0 ; i < el.points.numberOfItems; i++) {
+      let pos = el.points.getItem(i);
+      i > 0 && (totalLength += Math.sqrt(Math.pow((pos.x - prevPos.x), 2) + Math.pow((pos.y - prevPos.y), 2)) );
+      prevPos = pos;
+    }
+    return totalLength;
+  },
 
 
   /**********************

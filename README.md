@@ -5,6 +5,7 @@ Lightweight personal utilities for javascript manipulation.<br><br>
     <li><a href="#getComputedTranslateXY">getComputedTranslateXY</a></li>
     <li><a href="#ancestorFinder">ancestorFinder</a></li>
     <li><a href="#watch">watch</a></li>
+     <li><a href="#SVGLength">SVGLength</a></li>
     <li><a href="#mathAffine">math.createAffine</a></li>
     <li><a href="#mathRandom">math.random</a></li>
     <li><a href="#mathShuffle">math.shuffle</a></li>
@@ -227,6 +228,19 @@ This method return a reference to the listener. Once you call this method on the
 #### ```removeListner```
 In order to remove a listener for a property. Since you already have created the listener, you only have to remove the listener by passing the listener reference in the proxy's removeListener method: `proxy.removeListener(listenerReference);`
 
+---
+
+<h2 id="SVGLength">SVG Total Length</h2>
+A function to measure the length of an SVG path since SVGPathElement.getTotalLength() is not longer available in SVG 2. The function take an element as attribute and return the length in pixel. 
+
+```javascript
+    import { utils } from 'utils';
+    
+    const SVG = document.getElementByID('mySVG');
+    const SVGLength = utils.totalLength(SVG);
+    SVG.style.strokeDasharray = SVG.style.strokeDashoffset = SVGLength;
+
+```
 
 ---
 

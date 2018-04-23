@@ -237,7 +237,7 @@ A function to measure the length of an SVG path since SVGPathElement.getTotalLen
 import { utils } from 'utils';
     
 const SVG = document.getElementByID('mySVG');
-const SVGLength = utils.totalLength(SVG);
+const SVGLength = utils.SVGLength(SVG);
 SVG.style.strokeDasharray = SVG.style.strokeDashoffset = SVGLength;
 ```
 

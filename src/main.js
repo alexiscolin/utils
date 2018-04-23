@@ -162,11 +162,11 @@ var utils = {
   },
   
   /**
-  /*  TOTAL LENGTH - get full length of SVG path */
+  /*  SVG LENGTH - get full length of SVG path */
   /*  @param {HTMLnode} el - element to inspect */
   /*  @return {Number} totalLength - element path length */
   /* */
-  totalLength(el){
+  SVGLength(el){
     let totalLength = 0;
     let prevPos;
     for (var i = 0 ; i < el.points.numberOfItems; i++) {

@@ -234,12 +234,11 @@ In order to remove a listener for a property. Since you already have created the
 A function to measure the length of an SVG path since SVGPathElement.getTotalLength() is not longer available in SVG 2. The function take an element as attribute and return the length in pixel. 
 
 ```javascript
-    import { utils } from 'utils';
+import { utils } from 'utils';
     
-    const SVG = document.getElementByID('mySVG');
-    const SVGLength = utils.totalLength(SVG);
-    SVG.style.strokeDasharray = SVG.style.strokeDashoffset = SVGLength;
-
+const SVG = document.getElementByID('mySVG');
+const SVGLength = utils.totalLength(SVG);
+SVG.style.strokeDasharray = SVG.style.strokeDashoffset = SVGLength;
 ```
 
 ---
